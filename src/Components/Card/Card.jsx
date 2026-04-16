@@ -3,11 +3,11 @@ import Link from 'next/link';
 import React from 'react';
 
 const Card = ({ friend }) => {
-  // friend অবজেক্ট থেকে id ডিস্ট্রাকচার করে নিলে কোড পরিষ্কার থাকে
+
   const { id, name, picture, days_since_contact, tags, status } = friend;
 
   return (
-    // এখানে `${id}` এর বদলে `${friend.id}` অথবা শুধু `${id}` (যদি ডিস্ট্রাকচার করেন) লিখুন
+    
     <Link href={`/friends/${id}`}>
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col items-center text-center relative w-[250px] hover:shadow-md transition-shadow cursor-pointer">
         
@@ -17,6 +17,7 @@ const Card = ({ friend }) => {
             src={picture}
             alt={name}
             fill
+            
             className="rounded-full object-cover"
           />
         </div>
