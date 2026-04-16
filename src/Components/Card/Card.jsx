@@ -1,54 +1,52 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
-const Card = ({friend}) => {
-    console.log(friend)
-    return (
-        <div>
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-10 bg-gray-100">
-     
-        <div 
-          key={friend.id} 
-          className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col items-center text-center relative w-[250px]"
-        >
-          {/* প্রোফাইল ইমেজ */}
-          <div className="relative w-24 h-24 mb-4">
-            <Image
-              src={friend.picture}
-              alt={friend.name}
-              fill
-              className="rounded-full object-cover"
-            />
-          </div>
+const Card = ({ friend }) => {
+  // friend অবজেক্ট থেকে id ডিস্ট্রাকচার করে নিলে কোড পরিষ্কার থাকে
+  const { id, name, picture, days_since_contact, tags, status } = friend;
 
-          {/* নাম */}
-          <h2 className="text-xl font-bold text-slate-800 mb-1">{friend.name}</h2>
-
-          {/* কতদিন আগে কন্টাক্ট হয়েছে */}
-          <p className="text-gray-400 text-sm mb-3">{friend.days_since_contact}d ago</p>
-
-          {/* ট্যাগ (প্রথম ট্যাগটি দেখাচ্ছি আপনার ইমেজের মতো) */}
-          <div className="mb-4">
-            <span className="bg-emerald-100 text-emerald-600 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
-              {friend.tags[0]}
-            </span>
-          </div>
-
-          {/* স্ট্যাটাস বাটন */}
-          <div className={`px-6 py-2 rounded-full text-white font-bold text-sm shadow-sm
-            ${friend.status === 'overdue' ? 'bg-red-500' : 
-              friend.status === 'almost due' ? 'bg-amber-500' : 'bg-emerald-500'}
-          `}>
-            {friend.status.charAt(0).toUpperCase() + friend.status.slice(1)}
-          </div>
-
-          {/* লাল ডট (ইমেজে যেমন ছিল) */}
-          <div className="absolute top-1/2 right-6 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white"></div>
+  return (
+    // এখানে `${id}` এর বদলে `${friend.id}` অথবা শুধু `${id}` (যদি ডিস্ট্রাকচার করেন) লিখুন
+    <Link href={`/friends/${id}`}>
+      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col items-center text-center relative w-[250px] hover:shadow-md transition-shadow cursor-pointer">
+        
+        {/* Profile Image */}
+        <div className="relative w-24 h-24 mb-4">
+          <Image
+            src={picture}
+            alt={name}
+            fill
+            className="rounded-full object-cover"
+          />
         </div>
-     
-    </div>
+
+        {/* Name */}
+        <h2 className="text-xl font-bold text-slate-800 mb-1">{name}</h2>
+
+        {/* Days Ago */}
+        <p className="text-gray-400 text-sm mb-3">{days_since_contact}d ago</p>
+
+        {/* Tag */}
+        <div className="mb-4">
+          <span className="bg-emerald-100 text-emerald-600 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
+            {tags[0]}
+          </span>
         </div>
-    );
+
+        {/* Status Button */}
+        <div className={`px-6 py-2 rounded-full text-white font-bold text-sm shadow-sm
+          ${status === 'overdue' ? 'bg-red-500' : 
+            status === 'almost due' ? 'bg-amber-500' : 'bg-emerald-500'}
+        `}>
+          {status.charAt(0).toUpperCase() + status.slice(1)}
+        </div>
+
+        {/* Notification Dot */}
+        <div className="absolute top-1/2 right-6 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white"></div>
+      </div>
+    </Link>
+  );
 };
 
 export default Card;
