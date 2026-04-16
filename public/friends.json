@@ -9,7 +9,8 @@
     "tags": ["college", "close friend"],
     "bio": "Met in university. Love hiking together.",
     "goal": 14,
-    "next_due_date": "2025-07-20"
+    "next_due_date": "2025-07-20",
+    "type": "call"
   },
   {
     "id": 2,
@@ -21,7 +22,8 @@
     "tags": ["work", "mentor"],
     "bio": "Senior Dev at previous company. Great for career advice.",
     "goal": 30,
-    "next_due_date": "2025-08-10"
+    "next_due_date": "2025-08-10",
+    "type": "text"
   },
   {
     "id": 3,
@@ -33,7 +35,8 @@
     "tags": ["hobby", "photography"],
     "bio": "Met at the local gallery opening. Shared interest in film cameras.",
     "goal": 30,
-    "next_due_date": "2025-06-15"
+    "next_due_date": "2025-06-15",
+    "type": "video"
   },
   {
     "id": 4,
@@ -45,7 +48,8 @@
     "tags": ["family", "sibling"],
     "bio": "Sister living in Madrid. Try to talk every week.",
     "goal": 7,
-    "next_due_date": "2025-07-21"
+    "next_due_date": "2025-07-21",
+    "type": "call"
   },
   {
     "id": 5,
@@ -57,7 +61,8 @@
     "tags": ["high school"],
     "bio": "Old friend from childhood. Usually catch up once a year.",
     "goal": 180,
-    "next_due_date": "2025-11-30"
+    "next_due_date": "2025-11-30",
+    "type": "text"
   },
   {
     "id": 6,
@@ -69,7 +74,8 @@
     "tags": ["networking", "investor"],
     "bio": "Met at the tech conference in June. Interested in the new project.",
     "goal": 14,
-    "next_due_date": "2025-07-28"
+    "next_due_date": "2025-07-28",
+    "type": "video"
   },
   {
     "id": 7,
@@ -81,7 +87,8 @@
     "tags": ["gym", "buddy"],
     "bio": "Workout partner. Needs motivation to get back to the bench press.",
     "goal": 10,
-    "next_due_date": "2025-07-15"
+    "next_due_date": "2025-07-15",
+    "type": "call"
   },
   {
     "id": 8,
@@ -93,7 +100,8 @@
     "tags": ["freelance", "client"],
     "bio": "Graphic designer for the rebranding project. Very talented.",
     "goal": 5,
-    "next_due_date": "2025-07-20"
+    "next_due_date": "2025-07-20",
+    "type": "text"
   },
   {
     "id": 9,
@@ -105,7 +113,8 @@
     "tags": ["college", "professor"],
     "bio": "Thesis advisor. Keeping him updated on research progress.",
     "goal": 30,
-    "next_due_date": "2025-06-25"
+    "next_due_date": "2025-06-25",
+    "type": "video"
   },
   {
     "id": 10,
@@ -117,6 +126,7 @@
     "tags": ["travel", "friend"],
     "bio": "Met during the backpacking trip in Italy. Loves cooking.",
     "goal": 60,
-    "next_due_date": "2025-09-05"
+    "next_due_date": "2025-09-05",
+    "type": "call"
   }
 ]

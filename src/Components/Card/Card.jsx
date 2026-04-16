@@ -30,7 +30,7 @@ const Card = ({ friend }) => {
 
         {/* Tag */}
         <div className="mb-4">
-          <span className="bg-emerald-100 text-emerald-600 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
+          <span className="bg-emerald-100 text-emerald-600 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide"> 
             {tags[0]}
           </span>
         </div>

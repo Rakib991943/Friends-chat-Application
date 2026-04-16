@@ -1,6 +1,9 @@
 
+import HandleCallButton from '@/Components/HandleCallButton/HandleCallButton';
+import HandleTextButton from '@/Components/HandleTextButon/HandleTextButton';
+import HanldleVideoCallButton from '@/Components/HandleVideoCallButton/HnaldleVideoCallButton';
 import Image from 'next/image';
-import React from 'react';
+import React, { useContext } from 'react';
 
 import {
   FaPhoneAlt,
@@ -35,8 +38,10 @@ const FriendsDetails = async ({ params }) => {
     next_due_date,
     status,
     tags,
+    
   } = appDetails;
     
+
     return (
        <>
       <div className="bg-base-200 p-6 rounded-xl h-[400px]">
@@ -127,18 +132,12 @@ const FriendsDetails = async ({ params }) => {
           <div className="bg-base-100 rounded-xl shadow-md p-4">
             <h3 className="font-semibold mb-3">Quick Check-In</h3>
 
-            <div className="grid grid-cols-3 gap-3">
-              <button className="btn flex items-center gap-2">
-                <FaPhoneAlt /> Call
-              </button>
+            <div className="grid justify-betweenti grid-cols-3 gap-3">
+            <HandleCallButton  ></HandleCallButton>
 
-              <button className="btn flex items-center gap-2">
-                <FaSms /> Text
-              </button>
+              <HandleTextButton appDetails={appDetails}></HandleTextButton>
 
-              <button className="btn flex items-center gap-2">
-                <FaVideo /> Video
-              </button>
+              <HanldleVideoCallButton></HanldleVideoCallButton>
             </div>
           </div>
 
