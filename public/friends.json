@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "picture": "https://i.ibb.co.com/VPfFFM5/images-5.jpg",
+    "email": "john@example.com",
+    "days_since_contact": 12,
+    "status": "almost due",
+    "tags": ["college", "close friend"],
+    "bio": "Met in university. Love hiking together.",
+    "goal": 14,
+    "next_due_date": "2025-07-20"
+  },
+  {
+    "id": 2,
+    "name": "Sarah Jenkins",
+    "picture": "https://i.ibb.co.com/KzWKk09K/download-2.jpg",
+    "email": "sarah.j@provider.net",
+    "days_since_contact": 3,
+    "status": "on-track",
+    "tags": ["work", "mentor"],
+    "bio": "Senior Dev at previous company. Great for career advice.",
+    "goal": 30,
+    "next_due_date": "2025-08-10"
+  },
+  {
+    "id": 3,
+    "name": "Michael Chen",
+    "picture": "https://i.ibb.co.com/qYz29syK/images.jpg",
+    "email": "mchen@studio.com",
+    "days_since_contact": 45,
+    "status": "overdue",
+    "tags": ["hobby", "photography"],
+    "bio": "Met at the local gallery opening. Shared interest in film cameras.",
+    "goal": 30,
+    "next_due_date": "2025-06-15"
+  },
+  {
+    "id": 4,
+    "name": "Elena Rodriguez",
+    "picture": "https://i.ibb.co.com/VPfFFM5/images-5.jpg",
+    "email": "elena.rod@webmail.com",
+    "days_since_contact": 1,
+    "status": "on-track",
+    "tags": ["family", "sibling"],
+    "bio": "Sister living in Madrid. Try to talk every week.",
+    "goal": 7,
+    "next_due_date": "2025-07-21"
+  },
+  {
+    "id": 5,
+    "name": "David Smith",
+    "picture": "https://i.ibb.co.com/ksqn7wSk/images-4.jpg",
+    "email": "davey@service.org",
+    "days_since_contact": 175,
+    "status": "almost due",
+    "tags": ["high school"],
+    "bio": "Old friend from childhood. Usually catch up once a year.",
+    "goal": 180,
+    "next_due_date": "2025-11-30"
+  },
+  {
+    "id": 6,
+    "name": "Aisha Khan",
+    "picture": "https://i.ibb.co.com/QFD2rb6t/images-3.jpg",
+    "email": "akhan@business.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["networking", "investor"],
+    "bio": "Met at the tech conference in June. Interested in the new project.",
+    "goal": 14,
+    "next_due_date": "2025-07-28"
+  },
+  {
+    "id": 7,
+    "name": "Liam O'Connor",
+    "picture": "https://i.ibb.co.com/bgFB1SDF/download.jpg",
+    "email": "liam.oc@fitness.com",
+    "days_since_contact": 20,
+    "status": "overdue",
+    "tags": ["gym", "buddy"],
+    "bio": "Workout partner. Needs motivation to get back to the bench press.",
+    "goal": 10,
+    "next_due_date": "2025-07-15"
+  },
+  {
+    "id": 8,
+    "name": "Chloe Zhao",
+    "picture": "https://i.ibb.co.com/0RcpgDs1/download-3.jpg",
+    "email": "chloe.z@design.io",
+    "days_since_contact": 4,
+    "status": "almost due",
+    "tags": ["freelance", "client"],
+    "bio": "Graphic designer for the rebranding project. Very talented.",
+    "goal": 5,
+    "next_due_date": "2025-07-20"
+  },
+  {
+    "id": 9,
+    "name": "Marcus Thorne",
+    "picture": "https://i.ibb.co.com/KzWKk09K/download-2.jpg",
+    "email": "m.thorne@academia.edu",
+    "days_since_contact": 60,
+    "status": "overdue",
+    "tags": ["college", "professor"],
+    "bio": "Thesis advisor. Keeping him updated on research progress.",
+    "goal": 30,
+    "next_due_date": "2025-06-25"
+  },
+  {
+    "id": 10,
+    "name": "Sofia Rossi",
+    "picture": "https://i.ibb.co.com/bgFB1SDF/download.jpg",
+    "email": "sofia.rossi@travel.it",
+    "days_since_contact": 8,
+    "status": "on-track",
+    "tags": ["travel", "friend"],
+    "bio": "Met during the backpacking trip in Italy. Loves cooking.",
+    "goal": 60,
+    "next_due_date": "2025-09-05"
+  }
+]
