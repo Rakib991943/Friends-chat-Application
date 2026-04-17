@@ -3,12 +3,8 @@ import HandleCallButton from '@/Components/HandleCallButton/HandleCallButton';
 import HandleTextButton from '@/Components/HandleTextButon/HandleTextButton';
 import HanldleVideoCallButton from '@/Components/HandleVideoCallButton/HnaldleVideoCallButton';
 import Image from 'next/image';
-import React, { useContext } from 'react';
 
 import {
-  FaPhoneAlt,
-  FaSms,
-  FaVideo,
   FaBell,
   FaArchive,
 } from "react-icons/fa";

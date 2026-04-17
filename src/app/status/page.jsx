@@ -4,11 +4,13 @@ import { MeetContext } from '@/context/MeetContext';
 import { useContext } from 'react';
 import { PieChart, Pie, Legend, Tooltip } from 'recharts';
 
+
+
 export default function PieChartWithPaddingAngle() {
 
   const { meetData } = useContext(MeetContext);
 
-  // ✅ FIXED (case insensitive)
+
   const callCount = meetData.filter(
     item => item.type?.toLowerCase() === "call"
   ).length;
@@ -41,7 +43,7 @@ export default function PieChartWithPaddingAngle() {
 
         <Pie
           data={data}
-          innerRadius="60%"   // donut effect
+          innerRadius="60%"   
           outerRadius="100%"
           cornerRadius={10}
           paddingAngle={5}

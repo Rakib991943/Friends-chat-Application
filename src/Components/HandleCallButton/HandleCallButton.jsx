@@ -1,37 +1,48 @@
-
-"use client"
+"use client";
 
 import { MeetContext } from '@/context/MeetContext';
-import { useContext } from 'react';
-import { FaPhone } from 'react-icons/fa6';
+import React, { useContext, useState } from 'react';
+import { FaSms } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
-const HandleCallButton = ({appDetails}) => {
-    
-    const {meetData, setMeetData} = useContext(MeetContext);
+const HandleTextButton = ({ appDetails }) => {
 
+    const { setMeetData } = useContext(MeetContext);
 
-     const textData = {
-    type: "call",
-    message: "User clicked Call  button",
-    appId: appDetails?.id,
-    appName: appDetails?.name
-  };
+    const [isClicked, setIsClicked] = useState(false); // ✅ button state
 
-    const handleCallButton =()=>{
+    const handleCallButton = () => {
 
-    setMeetData([...meetData, textData])
+        if (isClicked) return; // safety
 
-   }
+        const textData = {
+            type: "call",
+            message: "User clicked text button",
+            appId: appDetails?.id,
+            appName: appDetails?.name,
+            id: Date.now()
+        };
+
+        setMeetData(prev => [...prev, textData]);
+
+        setIsClicked(true); // ✅ disable button
+
+        toast.success(`Call With ${appDetails?.name} ✅`); 
+    };
 
     return (
         <div>
-             <button
-             onClick={handleCallButton}
-             className="btn flex items-center gap-2">
-                            <FaPhone /> Call 
-                          </button>
+            <button
+                onClick={handleCallButton}
+                disabled={isClicked} 
+                className={`btn flex items-center gap-2 ${
+                    isClicked ? "opacity-50 cursor-not-allowed" : ""
+                }`}
+            >
+                <FaSms /> Call
+            </button>
         </div>
     );
 };
 
-export default HandleCallButton;
+export default HandleTextButton;
