@@ -1,32 +1,58 @@
-"use client"
+"use client";
 
-import { Pie, PieChart } from 'recharts';
+import { MeetContext } from '@/context/MeetContext';
+import { useContext } from 'react';
+import { PieChart, Pie, Legend, Tooltip } from 'recharts';
 
-
-// #region Sample data
-const data = [
-  { name: 'Group A', value: 400, fill: '#0088FE' },
-  { name: 'Group B', value: 300, fill: '#00C49F' },
-  { name: 'Group C', value: 300, fill: '#FFBB28' },
-  { name: 'Group D', value: 200, fill: '#FF8042' },
-];
-
-// #endregion
 export default function PieChartWithPaddingAngle() {
-  return (
-    <PieChart style={{ width: '100%', maxWidth: '500px', maxHeight: '80vh', aspectRatio: 1 }} responsive>
-      <Pie
-        data={data}
-        innerRadius="80%"
-        outerRadius="100%"
-        // Corner radius is the rounded edge of each pie slice
-        cornerRadius="50%"
-        fill="#8884d8"
-        // padding angle is the gap between each pie slice
-        paddingAngle={5}
-        dataKey="value"
-      />
 
-    </PieChart>
+  const { meetData } = useContext(MeetContext);
+
+  // ✅ FIXED (case insensitive)
+  const callCount = meetData.filter(
+    item => item.type?.toLowerCase() === "call"
+  ).length;
+
+  const videoCount = meetData.filter(
+    item => item.type?.toLowerCase() === "video"
+  ).length;
+
+  const textCount = meetData.filter(
+    item => item.type?.toLowerCase() === "text"
+  ).length;
+
+  const data = [
+    { name: 'Call', value: callCount, fill: '#ff4d6d' },
+    { name: 'Video', value: videoCount, fill: '#845ef7' },
+    { name: 'Text', value: textCount, fill: '#5c7cfa' },
+  ];
+
+  return (
+    <div className='flex justify-center items-center p-7'>
+
+      <PieChart
+        style={{
+          width: '100%',
+          maxWidth: '500px',
+          maxHeight: '80vh',
+          aspectRatio: 1
+        }}
+      >
+
+        <Pie
+          data={data}
+          innerRadius="60%"   // donut effect
+          outerRadius="100%"
+          cornerRadius={10}
+          paddingAngle={5}
+          dataKey="value"
+        />
+
+        <Tooltip />
+        <Legend />
+
+      </PieChart>
+
+    </div>
   );
 }
