@@ -2,7 +2,7 @@
 
 import { MeetContext } from "@/context/MeetContext";
 import React, { useContext, useState } from "react";
-import { FaPhoneAlt, FaVideo } from "react-icons/fa";
+import { FaPhoneAlt, FaPhoneSquareAlt, FaVideo } from "react-icons/fa";
 import { MdMessage } from "react-icons/md";
 
 const Timeline = () => {
@@ -14,11 +14,11 @@ const Timeline = () => {
 
   const filteredData = meetData.filter((item) => {
     const matchType =
-      filter === "all" || item.type.toLowerCase() === filter;
+      filter === "all" || item.type?.toLowerCase() === filter;
 
     const matchSearch =
-      item.name.toLowerCase().includes(search.toLowerCase()) ||
-      item.type.toLowerCase().includes(search.toLowerCase());
+      item.appName?.toLowerCase().includes(search.toLowerCase()) ||
+      item.type?.toLowerCase().includes(search.toLowerCase());
 
     return matchType && matchSearch;
   });
@@ -54,19 +54,29 @@ const Timeline = () => {
       </div>
 
       <div className="space-y-3">
-        {filteredData.map((item) => (
+        {filteredData.map((item, index) => (
+
+
           <div
-            key={item.id}
+            key={index}
             className="flex items-center gap-4 bg-base-100 p-4 rounded-xl shadow"
           >
+
+            <div className="text-xl">
+              {item.type === "Call" && <FaPhoneSquareAlt />}
+              {item.type === "video" && <FaVideo />}
+              {item.type === "text" && <MdMessage />}
+            </div>
             <div className="text-xl">{getIcon(item.type)}</div>
 
             <div>
               <h2 className="font-semibold">
-                {item.type} with {item.name}
+                {item.type} with {item.appName}
               </h2>
-              <p className="text-sm text-gray-400">
-                {item.next_due_date}
+
+              {/* message show */}
+              <p className="text-sm text-gray-500">
+                {item.message}
               </p>
             </div>
           </div>

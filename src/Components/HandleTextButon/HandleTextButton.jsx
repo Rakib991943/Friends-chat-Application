@@ -8,9 +8,17 @@ const HandleTextButton = ({appDetails}) => {
 
     const {meetData, setMeetData} = useContext(MeetContext)
 
+
+     const textData = {
+    type: "text",
+    message: "User clicked text button",
+    appId: appDetails?.id,
+    appName: appDetails?.name
+  };
+
     const handleTextButton =()=>{
 
-    setMeetData([...meetData, appDetails])
+    setMeetData([...meetData, textData])
 
    }
 

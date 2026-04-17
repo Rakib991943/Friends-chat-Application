@@ -133,11 +133,11 @@ const FriendsDetails = async ({ params }) => {
             <h3 className="font-semibold mb-3">Quick Check-In</h3>
 
             <div className="grid justify-betweenti grid-cols-3 gap-3">
-            <HandleCallButton  ></HandleCallButton>
+            <HandleCallButton   appDetails={appDetails} ></HandleCallButton>
 
               <HandleTextButton appDetails={appDetails}></HandleTextButton>
 
-              <HanldleVideoCallButton></HanldleVideoCallButton>
+              <HanldleVideoCallButton appDetails={appDetails}></HanldleVideoCallButton>
             </div>
           </div>
 
